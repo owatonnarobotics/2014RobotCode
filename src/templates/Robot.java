@@ -32,6 +32,8 @@ public class Robot extends IterativeRobot {
         
         watchdog = Watchdog.getInstance();
         CommandBase.init();
+        
+        mecDrive = new DriveCommand();
     }
 
     /**
@@ -45,7 +47,7 @@ public class Robot extends IterativeRobot {
         if (!watchdog.getEnabled()){
             watchdog.setEnabled(true);
         }
-        mecDrive = new DriveCommand();
+        mecDrive.start();
     }
     
     /**

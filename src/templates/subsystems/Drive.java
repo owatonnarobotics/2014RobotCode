@@ -50,7 +50,7 @@ public class Drive extends Subsystem {
         SmartDashboard.putNumber("Right X Speed: ", joySense(xright)); //Right XD speeeeed: 
     }
 
-    static double joySense(double num){ // Ooh La La
+    private static double joySense(double num){ // Ooh La La
         double a = 0.8;
         return (a * (num * num * num) + (1 - a) * num);
     }
