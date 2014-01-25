@@ -26,10 +26,7 @@ public class Robot extends IterativeRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
-    public void robotInit() {
-//        leftJoystick = OI.leftJoystick;
-//        rightJoystick = OI.rightJoystick;
-        
+    public void robotInit(){
         watchdog = Watchdog.getInstance();
         CommandBase.init();
         
