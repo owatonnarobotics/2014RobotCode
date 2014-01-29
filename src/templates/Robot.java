@@ -1,5 +1,5 @@
 // Any miscellaneous Info you find goes here
-// The robot Template we've been following: 3946 Ultimate Ascent at GitHub 
+// The robot Template we've been following: https://github.com/frc3946/UltimateAscent
 
 package templates;
 

@@ -16,7 +16,7 @@ import templates.subsystems.Drive;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-  
+    
     public static Drive drive = new Drive();
     
     public static void init() {    
