@@ -5,8 +5,8 @@
         <group>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/CommandBase.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/RobotMap.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/MotorCommandThinger.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/OI.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/Robot.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/XboxController.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/TheOneMotor.java</file>
         </group>

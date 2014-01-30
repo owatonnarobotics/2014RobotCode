@@ -19,8 +19,8 @@ public class TheOneMotor extends Subsystem {
     private Jaguar motorThingy = new Jaguar(RobotMap.JAGUAR_PORT);
     private boolean isOn = false;
     
-    public TheOneMotor() {
-        toggle();
+    public void toggle() {
+        isOn = !isOn;
         if (isOn) {
             //Drive At Speed .5 ?
             motorThingy.set(.5);
@@ -29,19 +29,11 @@ public class TheOneMotor extends Subsystem {
             motorThingy.set(0);
         }
     }
-
-
-    public void toggle() {
-        isOn = !isOn;
+    
+    public TheOneMotor() {
+        
     }
-    
-    
-    
-    
-    
-    
-    
+
     protected void initDefaultCommand() {
     }   
-    
 }

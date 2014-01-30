@@ -4,6 +4,7 @@
  */
 package templates;
 
+import command.MotorCommandThinger;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import templates.subsystems.TheOneMotor;
@@ -23,7 +24,7 @@ public class OI {
         
         oneMotor = new JoystickButton(xbox, RobotMap.ONE_MOTOR);
         
-        oneMotor.whenPressed(new TheOneMotor());
+        oneMotor.whenPressed(new MotorCommandThinger());
     }
     
     public XboxController getXbox() {
