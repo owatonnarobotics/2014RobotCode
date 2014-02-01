@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import templates.OI;
 import templates.subsystems.Drive;
+import templates.subsystems.Grabber;
 import templates.subsystems.TheOneMotor;
 
 /**
@@ -20,13 +21,14 @@ public abstract class CommandBase extends Command {
     
     public static Drive drive = new Drive();
     public static TheOneMotor oneMotor = new TheOneMotor();
+    public static Grabber grab = new Grabber();
     
     public static void init() {    
         oi = new OI();
         
         SmartDashboard.putData(drive);
     }
-        
+       
     public CommandBase() {
         super();
     }

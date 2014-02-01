@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.parsing.IInputOutput;
 
 /**
  * A nearly drop in replacement for Joystick using an XBOX USB Controller
- * @author Gustave Michel
+ * @author Sir Gustave Michel XLV
  */
 public class XboxController extends GenericHID implements IInputOutput {
     
