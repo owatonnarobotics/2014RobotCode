@@ -6,6 +6,8 @@
 
 package command;
 
+import edu.wpi.first.wpilibj.Timer;
+
 /**
  *
  * @author Developer
@@ -14,12 +16,15 @@ public class PassCommand extends CommandBase {
 
     protected void initialize() {
         requires(grab);
-        
+        requires(solenoid);
     }
 
     protected void execute() {
         grab.switchSpin();
-        
+        solenoid.toggle();
+        Timer.delay(.5);
+        solenoid.toggle();
+        grab.switchSpin();
     }
 
     protected boolean isFinished() {
@@ -34,6 +39,5 @@ public class PassCommand extends CommandBase {
     protected void interrupted() {
         
     }
-    
-    
+       
 }
