@@ -19,6 +19,9 @@ public class RobotMap {
     public static final int JAGUAR_PORT = 5; //semi-pointless thing that Ethan told us to make for testing
     public static final int SPINNING_BALL_GRABBER_PORT = 6; //port for that spinning thing that grabs the ball
     public static final int SOLENOID_PASSING_PORT = 7; //port for the solenoid thing in passcommand
+    public static int SWITCH_MOTOR = 8;
+    public static final int DIGITAL_SENSOR = 9;
+    
     //Buttons
     public static final int ONE_MOTOR = XboxController.ButtonType.kLeftStick.value;
 }
