@@ -3,41 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package command;
-
 
 /**
  *
  * @author Developer
  */
-public class SwitchCheck extends CommandBase {
+public class MotorOn extends CommandBase {
 
-    public SwitchCheck() {
-        requires(motor360);
-        requires(switch360);
-    }
-    
     protected void initialize() {
-        
+        requires(motor360);
     }
 
     protected void execute() {
-        if(switch360.check()) {
-            motor360.turnOff();
-        }
+
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {
-        
+        motor360.rotate();
     }
 
     protected void interrupted() {
-        
+        // ethan.turnOff();
     }
-    
 }

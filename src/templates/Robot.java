@@ -28,7 +28,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit(){
         watchdog = Watchdog.getInstance();
-        CommandBase.init();
+        CommandBase.init(); //initializes commands
         
         mecDrive = new DriveCommand();
     }

@@ -21,9 +21,9 @@ public class PassCommand extends CommandBase {
 
     protected void execute() {
         grab.switchSpin();
-        solenoid.toggle();
+        solenoid.toggleOn();
         Timer.delay(.5);
-        solenoid.toggle();
+        solenoid.toggleOff();
         grab.switchSpin();
     }
 

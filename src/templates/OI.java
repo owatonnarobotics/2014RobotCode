@@ -5,6 +5,7 @@
 package templates;
 
 import command.MotorCommandThinger;
+import command.MotorOn;
 import command.PassCommand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -20,13 +21,18 @@ public class OI {
     private XboxController xbox;
     private Button oneMotor;
     private Button switchSpin;
+    private Button enable360;
     
     public OI() {
         xbox = new XboxController(1); //Be careful not to plug in multiple USB Items...
+        
         oneMotor = new JoystickButton(xbox, RobotMap.ONE_MOTOR);
         switchSpin = new JoystickButton(xbox, RobotMap.SPINNING_BALL_GRABBER_PORT);
+        enable360 = new JoystickButton(xbox, RobotMap.ENABLE_360);
+        
         oneMotor.whenPressed(new MotorCommandThinger());
         switchSpin.whenPressed(new PassCommand());
+        enable360.whenPressed(new MotorOn());
     }
     
     public XboxController getXbox() {
