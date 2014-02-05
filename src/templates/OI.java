@@ -5,7 +5,7 @@
 package templates;
 
 import command.MotorCommandThinger;
-import command.MotorOn;
+import command.Motor360On;
 import command.PassCommand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -32,7 +32,7 @@ public class OI {
         
         oneMotor.whenPressed(new MotorCommandThinger());
         switchSpin.whenPressed(new PassCommand());
-        enable360.whenPressed(new MotorOn());
+        enable360.whenPressed(new Motor360On());
     }
     
     public XboxController getXbox() {

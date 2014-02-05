@@ -4,6 +4,7 @@
 package templates;
 
 
+import command.Autonomous;
 import command.CommandBase;
 import command.DriveCommand;
 import edu.wpi.first.wpilibj.IterativeRobot;

@@ -44,13 +44,13 @@ public class Drive extends Subsystem {
         double yleft = controller.getY(GenericHID.Hand.kLeft);
         double xright = controller.getX(GenericHID.Hand.kRight);
         
-        drive.mecanumDrive_Cartesian(joySense(xleft), joySense(yleft), joySense(xright),0);
-        SmartDashboard.putNumber("Left  X Speed: ", joySense(xleft)); //LaFt X SPeEd: 
-        SmartDashboard.putNumber("Left  Y Speed: ", joySense(yleft)); //LEFT Y spade: 
-        SmartDashboard.putNumber("Right X Speed: ", joySense(xright)); //Right XD speeeeed: 
+        drive.mecanumDrive_Cartesian(joystickSensitivity(xleft), joystickSensitivity(yleft), joystickSensitivity(xright),0);
+        SmartDashboard.putNumber("Left  X Speed: ", joystickSensitivity(xleft)); //LaFt X SPeEd: 
+        SmartDashboard.putNumber("Left  Y Speed: ", joystickSensitivity(yleft)); //LEFT Y spade: 
+        SmartDashboard.putNumber("Right X Speed: ", joystickSensitivity(xright)); //Right XD speeeeed: 
     }
 
-    private static double joySense(double num){ // Ooh La La
+    private static double joystickSensitivity(double num){ // joySense Ooh La La
         double a = 0.8;
         return (a * (num * num * num) + (1 - a) * num);
     }

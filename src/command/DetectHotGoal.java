@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.image.NIVision.MeasurementType;
  *
  * @author Developer
  */
-public class DetectHotGoal {
+public class DetectHotGoal extends CommandBase {
 
     final int Y_IMAGE_RES = 480;
     final double VIEW_ANGLE = 49;
@@ -32,6 +32,27 @@ public class DetectHotGoal {
 
     AxisCamera camera;          // the axis camera object (connected to the switch)
     CriteriaCollection cc;
+
+    protected void initialize() {
+        
+    }
+
+    protected void execute() {
+        
+    }
+
+    protected boolean isFinished() {
+        return true;
+        
+    }
+
+    protected void end() {
+        
+    }
+
+    protected void interrupted() {
+        
+    }
 
     public class Scores {
 

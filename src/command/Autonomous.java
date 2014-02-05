@@ -23,6 +23,9 @@ public class Autonomous extends CommandGroup {
         //addSequential(new Flamethrower());
         //
         //That's all we need in here!
+        
+        addSequential(new DetectHotGoal());
+        addSequential(new AutonomousDrive());
     }
     
 }

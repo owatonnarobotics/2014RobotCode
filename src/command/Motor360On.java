@@ -9,7 +9,7 @@ package command;
  *
  * @author Developer
  */
-public class MotorOn extends CommandBase {
+public class Motor360On extends CommandBase {
 
     protected void initialize() {
         requires(motor360);
