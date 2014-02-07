@@ -21,9 +21,13 @@ public class RobotMap {
     public static final int SOLENOID_PASSING_PORT = 7; //port for the solenoid thing in passcommand
     public static final int SWITCH_MOTOR = 8;
     public static final int DIGITAL_SENSOR = 9;
+    public static final int COMPRESSOR_PORT = 10;
+    public static final int PNEUMATIC_LAUNCHER = 11; //TECHNIC_LAUNCHER, dingbat
+    public static final int LAUNCH_SWITCH = 12;
     
     //Buttons
     public static final int ONE_MOTOR = XboxController.ButtonType.kLeftStick.value;
-    public static final int ENABLE_360 = XboxController.ButtonType.kRTrigger.value;
+    public static final int ENABLE_360 = XboxController.ButtonType.kLTrigger.value;
+    public static final int LAUNCH = XboxController.ButtonType.kRTrigger.value;
 }
 //Magikarp is better than Ditto. Nothing is better than the Guillotine. No one likes Gyrados.

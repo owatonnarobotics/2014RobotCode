@@ -15,6 +15,27 @@ import edu.wpi.first.wpilibj.image.NIVision.MeasurementType;
  */
 public class DetectHotGoal extends CommandBase {
 
+    protected void initialize() {
+
+    }
+
+    protected void execute() {
+
+    }
+
+    protected boolean isFinished() {
+        return true;
+
+    }
+
+    protected void end() {
+
+    }
+
+    protected void interrupted() {
+
+    }
+
     final int Y_IMAGE_RES = 480;
     final double VIEW_ANGLE = 49;
 
@@ -32,27 +53,6 @@ public class DetectHotGoal extends CommandBase {
 
     AxisCamera camera;          // the axis camera object (connected to the switch)
     CriteriaCollection cc;
-
-    protected void initialize() {
-        
-    }
-
-    protected void execute() {
-        
-    }
-
-    protected boolean isFinished() {
-        return true;
-        
-    }
-
-    protected void end() {
-        
-    }
-
-    protected void interrupted() {
-        
-    }
 
     public class Scores {
 
@@ -87,11 +87,7 @@ public class DetectHotGoal extends CommandBase {
 
         try {
             /**
-             * Do the image capture with the camera and apply the algorithm
-             * described above. This sample will either get images from the
-             * camera or from an image file stored in the top level directory in
-             * the flash memory on the cRIO. The file name in this case is
-             * "testImage.jpg"
+             * Do the image capture with the camera and apply the algorithm described above. This sample will either get images from the camera or from an image file stored in the top level directory in the flash memory on the cRIO. The file name in this case is "testImage.jpg"
              *
              */
             //ColorImage image = camera.getImage();     // comment if using stored images
@@ -171,7 +167,7 @@ public class DetectHotGoal extends CommandBase {
                 }
 
                 if (verticalTargetCount > 0) {
-                                    //Information about the target is contained in the "target" structure
+                    //Information about the target is contained in the "target" structure
                     //To get measurement information such as sizes or locations use the
                     //horizontal or vertical index to get the particle report as shown below
                     ParticleAnalysisReport distanceReport = filteredImage.getParticleAnalysisReport(target.verticalIndex);
@@ -187,9 +183,7 @@ public class DetectHotGoal extends CommandBase {
             }
 
             /**
-             * all images in Java must be freed after they are used since they
-             * are allocated out of C data structures. Not calling free() will
-             * cause the memory to accumulate over each pass of this loop.
+             * all images in Java must be freed after they are used since they are allocated out of C data structures. Not calling free() will cause the memory to accumulate over each pass of this loop.
              */
             filteredImage.free();
             thresholdImage.free();

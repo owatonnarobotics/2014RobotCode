@@ -5,6 +5,7 @@ package templates;
 
 
 import command.Autonomous;
+import command.CheckLaunchSwitch;
 import command.CommandBase;
 import command.DriveCommand;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -22,6 +23,7 @@ public class Robot extends IterativeRobot {
 
     Watchdog watchdog;
     DriveCommand mecDrive;
+    CheckLaunchSwitch swCheck;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -32,6 +34,7 @@ public class Robot extends IterativeRobot {
         CommandBase.init(); //initializes commands
         
         mecDrive = new DriveCommand();
+        swCheck = new CheckLaunchSwitch();
     }
 
     /**
@@ -46,6 +49,7 @@ public class Robot extends IterativeRobot {
             watchdog.setEnabled(true);
         }
         mecDrive.start();
+        swCheck.start();
     }
     
     /**

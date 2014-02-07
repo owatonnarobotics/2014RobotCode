@@ -7,6 +7,7 @@ package templates.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import templates.RobotMap;
 
@@ -16,7 +17,7 @@ import templates.RobotMap;
  */
 public class Motor360 extends Subsystem {
     
-    private Jaguar switchMotor;
+    private Relay switchMotor;
     private DigitalInput motorSensor;
     
     protected void initDefaultCommand() {
@@ -27,18 +28,18 @@ public class Motor360 extends Subsystem {
     }
     
     public void turnOn() {
-        switchMotor.set(.5);
+        switchMotor.set(Relay.Value.kOn);
     }
     
     public void turnOff() {
-        switchMotor.set(0);
+        switchMotor.set(Relay.Value.kOff);
     }
     
     public void rotate() {
         boolean completed = false;
         boolean exitedSensor = false;
         while (!completed) {
-            switchMotor.set(.5);
+            switchMotor.set(Relay.Value.kOn);
             if (motorSensor.get() && exitedSensor) {
                 completed = true;
             }
@@ -46,12 +47,12 @@ public class Motor360 extends Subsystem {
                 exitedSensor = true;
             }
         }
-        switchMotor.set(0);
+        switchMotor.set(Relay.Value.kOff);
     }
     
     public Motor360() {
         super();
-        switchMotor = new Jaguar(RobotMap.SWITCH_MOTOR);
+        switchMotor = new Relay(RobotMap.SWITCH_MOTOR);
         motorSensor = new DigitalInput(RobotMap.DIGITAL_SENSOR);
     }
 }

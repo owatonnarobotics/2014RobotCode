@@ -4,6 +4,7 @@
  */
 package templates;
 
+import command.LaunchCommand;
 import command.MotorCommandThinger;
 import command.Motor360On;
 import command.PassCommand;
@@ -22,6 +23,7 @@ public class OI {
     private Button oneMotor;
     private Button switchSpin;
     private Button enable360;
+    private Button launch;
     
     public OI() {
         xbox = new XboxController(1); //Be careful not to plug in multiple USB Items...
@@ -29,10 +31,12 @@ public class OI {
         oneMotor = new JoystickButton(xbox, RobotMap.ONE_MOTOR);
         switchSpin = new JoystickButton(xbox, RobotMap.SPINNING_BALL_GRABBER_PORT);
         enable360 = new JoystickButton(xbox, RobotMap.ENABLE_360);
+        launch = new JoystickButton(xbox, RobotMap.LAUNCH);
         
         oneMotor.whenPressed(new MotorCommandThinger());
         switchSpin.whenPressed(new PassCommand());
         enable360.whenPressed(new Motor360On());
+        launch.whenPressed(new LaunchCommand());
     }
     
     public XboxController getXbox() {
