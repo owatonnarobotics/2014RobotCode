@@ -5,22 +5,23 @@
  */
 package templates.subsystems;
 
-import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import templates.RobotMap;
+
 
 /**
  *
  * @author Developer
  */
-public class Compressor extends Subsystem {
+public class TheCompressor extends Subsystem {
 
-    private Relay compressor;
+    private Compressor compressor;
     
-    public Compressor() {
+    public TheCompressor() {
         super();
-        compressor = new Relay(RobotMap.COMPRESSOR_PORT);
-        compressor.set(Relay.Value.kOn);
+        compressor = new Compressor(RobotMap.COMPRESSOR_GAUGE, RobotMap.COMPRESSOR_PORT);
+        compressor.start();
     }
 
     protected void initDefaultCommand() {

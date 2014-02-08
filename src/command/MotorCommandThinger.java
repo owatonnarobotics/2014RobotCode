@@ -15,7 +15,7 @@ package command;
 public class MotorCommandThinger extends CommandBase {
     
     public MotorCommandThinger() {
-        requires(oneMotor);
+        //requires(oneMotor);
         
     }
 
@@ -24,7 +24,7 @@ public class MotorCommandThinger extends CommandBase {
     }
 
     protected void execute() {
-        oneMotor.toggle();
+        //oneMotor.toggle();
     }
 
     protected boolean isFinished() {

@@ -15,31 +15,8 @@ import edu.wpi.first.wpilibj.image.NIVision.MeasurementType;
  */
 public class DetectHotGoal extends CommandBase {
 
-    protected void initialize() {
-
-    }
-
-    protected void execute() {
-
-    }
-
-    protected boolean isFinished() {
-        return true;
-
-    }
-
-    protected void end() {
-
-    }
-
-    protected void interrupted() {
-
-    }
-
     final int Y_IMAGE_RES = 480;
     final double VIEW_ANGLE = 49;
-
-    final double PI = 3.141592653;
 
     final int RECTANGULARITY_LIMIT = 40;
     final int ASPECT_RATIO_LIMIT = 55;
@@ -54,32 +31,10 @@ public class DetectHotGoal extends CommandBase {
     AxisCamera camera;          // the axis camera object (connected to the switch)
     CriteriaCollection cc;
 
-    public class Scores {
-
-        double rectangularity;
-        double aspectRatioVertical;
-        double aspectRatioHorizontal;
+    protected void initialize() {
     }
 
-    public class TargetReport {
-
-        int verticalIndex;
-        int horizontalIndex;
-        boolean Hot;
-        double totalScore;
-        double leftScore;
-        double rightScore;
-        double tapeWidthScore;
-        double verticalScore;
-    }
-
-    public void robotInit() {
-        //camera = AxisCamera.getInstance();  // get an instance of the camera
-        cc = new CriteriaCollection();      // create the criteria for the particle filter
-        cc.addCriteria(MeasurementType.IMAQ_MT_AREA, AREA_MINIMUM, 65535, false);
-    }
-
-    public void autonomous() {
+    protected void execute() {
         TargetReport target = new TargetReport();
         int verticalTargets[] = new int[MAX_PARTICLES];
         int horizontalTargets[] = new int[MAX_PARTICLES];
@@ -195,6 +150,44 @@ public class DetectHotGoal extends CommandBase {
             ex.printStackTrace();
         }
 
+    }
+
+    protected boolean isFinished() {
+        return true;
+
+    }
+
+    protected void end() {
+
+    }
+
+    protected void interrupted() {
+
+    }
+
+    public class Scores {
+
+        double rectangularity;
+        double aspectRatioVertical;
+        double aspectRatioHorizontal;
+    }
+
+    public class TargetReport {
+
+        int verticalIndex;
+        int horizontalIndex;
+        boolean Hot;
+        double totalScore;
+        double leftScore;
+        double rightScore;
+        double tapeWidthScore;
+        double verticalScore;
+    }
+
+    public void robotInit() {
+        //camera = AxisCamera.getInstance();  // get an instance of the camera
+        cc = new CriteriaCollection();      // create the criteria for the particle filter
+        cc.addCriteria(MeasurementType.IMAQ_MT_AREA, AREA_MINIMUM, 65535, false);
     }
 
     double computeDistance(BinaryImage image, ParticleAnalysisReport report, int particleNumber) throws NIVisionException {

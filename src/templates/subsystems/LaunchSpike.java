@@ -23,7 +23,7 @@ public class LaunchSpike extends Subsystem {
     
     public LaunchSpike() {
         super();
-        launcher = new Relay(RobotMap.LAUNCH);
+        launcher = new Relay(RobotMap.LAUNCH_MOTOR);
         launcher.set(Relay.Value.kOn);
     }
     

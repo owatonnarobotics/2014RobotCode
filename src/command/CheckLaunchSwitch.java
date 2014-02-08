@@ -12,9 +12,12 @@ package command;
  */
 public class CheckLaunchSwitch extends CommandBase{
 
-    protected void initialize() {
+    public CheckLaunchSwitch(){
         requires(detector);
         requires(launcher);
+    }
+    
+    protected void initialize() {
     }
 
     protected void execute() {

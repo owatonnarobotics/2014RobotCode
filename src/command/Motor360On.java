@@ -11,12 +11,15 @@ package command;
  */
 public class Motor360On extends CommandBase {
 
-    protected void initialize() {
+    public Motor360On(){
         requires(motor360);
+    }
+    
+    protected void initialize() {
     }
 
     protected void execute() {
-
+        
     }
 
     protected boolean isFinished() {

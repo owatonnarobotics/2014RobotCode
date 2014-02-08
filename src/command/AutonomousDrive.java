@@ -13,10 +13,10 @@ package command;
 class AutonomousDrive extends CommandBase {
 
     public AutonomousDrive() {
+        requires(drive);
     }
 
     protected void initialize() {
-        requires(drive);
     }
 
     protected void execute() {

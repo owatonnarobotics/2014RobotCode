@@ -14,9 +14,12 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class PassCommand extends CommandBase {
 
-    protected void initialize() {
+    public PassCommand() {
         requires(grab);
         requires(solenoid);
+    }
+    
+    protected void initialize() {
     }
 
     protected void execute() {

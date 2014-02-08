@@ -23,7 +23,7 @@ public class Robot extends IterativeRobot {
 
     Watchdog watchdog;
     DriveCommand mecDrive;
-    CheckLaunchSwitch swCheck;
+    //CheckLaunchSwitch swCheck;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
         CommandBase.init(); //initializes commands
         
         mecDrive = new DriveCommand();
-        swCheck = new CheckLaunchSwitch();
+        //swCheck = new CheckLaunchSwitch();
     }
 
     /**
@@ -49,7 +49,7 @@ public class Robot extends IterativeRobot {
             watchdog.setEnabled(true);
         }
         mecDrive.start();
-        swCheck.start();
+        //swCheck.start();
     }
     
     /**
@@ -57,6 +57,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        watchdog.feed();
     }
     
     /**

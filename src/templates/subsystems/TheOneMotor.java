@@ -16,17 +16,17 @@ import templates.RobotMap;
  */
 public class TheOneMotor extends Subsystem {
     
-    private Jaguar motorThingy = new Jaguar(RobotMap.JAGUAR_PORT);
+    //private Jaguar motorThingy = new Jaguar();
     private boolean isOn = false;
     
     public void toggle() {
         isOn = !isOn;
         if (isOn) {
             //Drive At Speed .5 ?
-            motorThingy.set(.5);
+            //motorThingy.set(.5);
         }
         else {
-            motorThingy.set(0);
+            //motorThingy.set(0);
         }
     }
     

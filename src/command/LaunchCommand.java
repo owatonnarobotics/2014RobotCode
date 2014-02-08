@@ -15,14 +15,18 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class LaunchCommand extends CommandBase {
 
-    protected void initialize() {
+    public LaunchCommand() {
         requires(motor360);
         requires(launcher);
+    }
+    
+    protected void initialize() {
     }
 
     protected void execute() {
         motor360.rotate();
         Timer.delay(.5);
+        System.out.println("Delay Finished");
         launcher.toggleOff();
         //What is "switch - when hit turn on" ?
     }
