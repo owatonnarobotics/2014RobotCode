@@ -5,11 +5,18 @@
  */
 package command;
 
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Timer;
+import templates.subsystems.Motor360;
+
 /**
  *
  * @author Developer
  */
 public class Motor360On extends CommandBase {
+    
+    boolean completed = false;
+    boolean exitedSensor = false;
 
     public Motor360On(){
         requires(motor360);
@@ -19,18 +26,26 @@ public class Motor360On extends CommandBase {
     }
 
     protected void execute() {
-        
-    }
+        motor360.turnOn();
+        if (motor360.check() && exitedSensor) {
+            completed = true;
+        }
+        else if (!motor360.check()) {
+            exitedSensor = true;
+            }
+        }
 
     protected boolean isFinished() {
-        return true;
+        return completed;
     }
 
     protected void end() {
-        motor360.rotate();
+        motor360.turnOff();
+        Timer.delay(.5);
+        System.out.println("Delay Finished");
+        launcher.toggleOff();
     }
 
     protected void interrupted() {
-        // ethan.turnOff();
     }
 }

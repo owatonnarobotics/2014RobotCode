@@ -35,21 +35,6 @@ public class Motor360 extends Subsystem {
         switchMotor.set(Relay.Value.kOff);
     }
     
-    public void rotate() {
-        boolean completed = false;
-        boolean exitedSensor = false;
-        while (!completed) {
-            switchMotor.set(Relay.Value.kOn);
-            if (motorSensor.get() && exitedSensor) {
-                completed = true;
-            }
-            else if (!motorSensor.get()) {
-                exitedSensor = true;
-            }
-        }
-        switchMotor.set(Relay.Value.kOff);
-    }
-    
     public Motor360() {
         super();
         switchMotor = new Relay(RobotMap.SWITCH_MOTOR);

@@ -36,6 +36,9 @@ public class Robot extends IterativeRobot {
         mecDrive = new DriveCommand();
         //swCheck = new CheckLaunchSwitch();
     }
+    
+    public void autonomousInit() {
+    }
 
     /**
      * This function is called periodically during autonomous
