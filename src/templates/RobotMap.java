@@ -32,5 +32,8 @@ public class RobotMap {
     //Buttons
     public static final int PASS = XboxController.ButtonType.kLTrigger.value;
     public static final int LAUNCH = XboxController.ButtonType.kRTrigger.value;
+    
+    //World Varibles
+    public static boolean hotGoal = false;
 }
 //Magikarp is better than Ditto. Nothing is better than the Guillotine. No one likes Gyrados.

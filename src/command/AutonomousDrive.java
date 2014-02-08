@@ -10,7 +10,7 @@ package command;
  *
  * @author Developer
  */
-class AutonomousDrive extends CommandBase {
+public class AutonomousDrive extends CommandBase {
 
     public AutonomousDrive() {
         requires(drive);
@@ -20,7 +20,6 @@ class AutonomousDrive extends CommandBase {
     }
 
     protected void execute() {
-        
     }
 
     protected boolean isFinished() {
@@ -29,7 +28,8 @@ class AutonomousDrive extends CommandBase {
     }
 
     protected void end() {
-        
+        drive.forward();
+        drive.right();
     }
 
     protected void interrupted() {

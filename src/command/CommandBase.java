@@ -7,6 +7,7 @@ package command;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import templates.OI;
+import templates.subsystems.CameraDetection;
 import templates.subsystems.TheCompressor;
 import templates.subsystems.Drive;
 import templates.subsystems.FireSolenoid;
@@ -25,13 +26,13 @@ public abstract class CommandBase extends Command {
     
     
     public static Drive drive = new Drive();
-    //public static TheOneMotor oneMotor = new TheOneMotor();
     public static Grabber grab = new Grabber();
     public static FireSolenoid solenoid = new FireSolenoid();
     public static Motor360 motor360 = new Motor360();
     public static TheCompressor compressor = new TheCompressor();
     public static LaunchSpike launcher = new LaunchSpike();
     public static LaunchSwitch detector = new LaunchSwitch();
+    public static CameraDetection camera = new CameraDetection();
     
     public static void init() {    
         oi = new OI();

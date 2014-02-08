@@ -26,6 +26,8 @@ public class Drive extends Subsystem {
     private Jaguar jFR;
     private Jaguar jBR;   
     private RobotDrive drive;
+    
+    private final double autoSpeed = 0.8;
 
     public Drive() {
         super();
@@ -48,6 +50,22 @@ public class Drive extends Subsystem {
         SmartDashboard.putNumber("Left  X Speed: ", joystickSensitivity(xleft)); //LaFt X SPeEd: 
         SmartDashboard.putNumber("Left  Y Speed: ", joystickSensitivity(yleft)); //LEFT Y spade: 
         SmartDashboard.putNumber("Right X Speed: ", joystickSensitivity(xright)); //Right XD speeeeed: 
+    }
+    
+    public void forward(){
+        drive.mecanumDrive_Cartesian(0, autoSpeed, 0, 0);
+    }
+    
+    public void left(){
+        drive.mecanumDrive_Cartesian(-1 * autoSpeed, 0, 0, 0);
+    }
+    
+    public void right(){
+        drive.mecanumDrive_Cartesian(autoSpeed, 0, 0, 0);
+    }
+    
+    public void stop(){
+        drive.mecanumDrive_Cartesian(0, 0, 0, 0);
     }
 
     private static double joystickSensitivity(double num){ // joySense Ooh La La
