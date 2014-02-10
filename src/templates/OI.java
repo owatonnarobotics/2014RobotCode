@@ -4,7 +4,7 @@
  */
 package templates;
 
-import command.Motor360On;
+import command.LaunchCommand;
 import command.PassCommand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -27,7 +27,7 @@ public class OI {
         launch = new JoystickButton(xbox, RobotMap.LAUNCH);
         
         switchSpin.whenPressed(new PassCommand());
-        launch.whenPressed(new Motor360On());
+        launch.whenPressed(new LaunchCommand());
     }
     
     public XboxController getXbox() {

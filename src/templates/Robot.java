@@ -8,6 +8,7 @@ import command.Autonomous;
 import command.CheckLaunchSwitch;
 import command.CommandBase;
 import command.DriveCommand;
+import command.FrontSensorToDash;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Watchdog;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,7 +24,8 @@ public class Robot extends IterativeRobot {
 
     Watchdog watchdog;
     DriveCommand mecDrive;
-    //CheckLaunchSwitch swCheck;
+    CheckLaunchSwitch swCheck;
+    FrontSensorToDash info;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -34,7 +36,8 @@ public class Robot extends IterativeRobot {
         CommandBase.init(); //initializes commands
         
         mecDrive = new DriveCommand();
-        //swCheck = new CheckLaunchSwitch();
+        swCheck = new CheckLaunchSwitch();
+        info = new FrontSensorToDash();
     }
     
     public void autonomousInit() {
@@ -52,7 +55,8 @@ public class Robot extends IterativeRobot {
             watchdog.setEnabled(true);
         }
         mecDrive.start();
-        //swCheck.start();
+        swCheck.start();
+        info.start();
     }
     
     /**

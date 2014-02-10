@@ -6,7 +6,6 @@
 package templates.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import templates.RobotMap;
@@ -37,7 +36,7 @@ public class Motor360 extends Subsystem {
     
     public Motor360() {
         super();
-        switchMotor = new Relay(RobotMap.SWITCH_MOTOR);
+        switchMotor = new Relay(RobotMap.MOTOR_360);
         motorSensor = new DigitalInput(RobotMap.DIGITAL_SENSOR);
     }
 }

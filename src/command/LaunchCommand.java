@@ -13,12 +13,12 @@ import templates.subsystems.Motor360;
  *
  * @author Developer
  */
-public class Motor360On extends CommandBase {
+public class LaunchCommand extends CommandBase {
     
     boolean completed = false;
     boolean exitedSensor = false;
 
-    public Motor360On(){
+    public LaunchCommand(){
         requires(motor360);
     }
     

@@ -6,36 +6,34 @@
 
 package command;
 
-import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import templates.subsystems.FrontSensor;
 
 /**
  *
  * @author Developer
  */
-public class AutonomousDrive extends CommandBase {
+public class FrontSensorToDash extends CommandBase {
 
-    public AutonomousDrive() {
-        requires(drive);
+    public FrontSensorToDash() {
         requires(frontSensor);
     }
-
+    
+    
     protected void initialize() {
-        drive.forward();
-    }
-
-    protected void execute() {
-
-    }
-
-    protected boolean isFinished() {
-        return frontSensor.inOptimalRange();
         
     }
 
+    protected void execute() {
+        SmartDashboard.putBoolean("Distance: ", frontSensor.inShootingRange());
+    }
+
+    protected boolean isFinished() {
+        return false;
+    }
+
     protected void end() {
-        drive.right();
-        Timer.delay(.5);
-        drive.stop();
+        
     }
 
     protected void interrupted() {

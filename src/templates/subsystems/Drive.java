@@ -18,7 +18,7 @@ import templates.XboxController;
 
 /**
  *
- * @author execute() {Lord Michael Guillotine I} &   Preston.doDatThang(start) &   import package export private protected static abstract void implements public synchronized int extends super double Evan &   drunkEEEEETHTHTNAAAHAHSNDFNNNN.operateHeavyMachinery &  Jason Bourne(Stephen)
+ * @author execute() {Lord Michael Guillotine I} &    Preston.doDatThang(start) &    import package export private protected static abstract void implements public synchronized int extends super double Evan &    drunkEEEEETHTHTNAAAHAHSNDFNNNN.operateHeavyMachinery &   Jason Bourne(Stephen)
  */
 public class Drive extends Subsystem {
     private Jaguar jFL;
