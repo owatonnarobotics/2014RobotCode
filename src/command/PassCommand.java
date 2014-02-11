@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package command;
 
 import edu.wpi.first.wpilibj.Timer;
@@ -18,29 +17,28 @@ public class PassCommand extends CommandBase {
         requires(grab);
         requires(solenoid);
     }
-    
+
     protected void initialize() {
+        setTimeout(.5);
+        grab.switchSpin();
+        solenoid.toggleOn();
     }
 
     protected void execute() {
-        grab.switchSpin();
-        solenoid.toggleOn();
-        Timer.delay(.5);
+    }
+
+    protected boolean isFinished() {
+        return isTimedOut();
+
+    }
+
+    protected void end() {
         solenoid.toggleOff();
         grab.switchSpin();
     }
 
-    protected boolean isFinished() {
-        return true;
-        
-    }
-
-    protected void end() {
-        
-    }
-
     protected void interrupted() {
-        
+
     }
-       
+
 }

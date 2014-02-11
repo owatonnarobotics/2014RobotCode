@@ -5,32 +5,14 @@
             <url>src/command/DetectHotGoal.java</url>
             <bookmark id="1">
                 <name/>
-                <line>49</line>
+                <line>41</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/Motor360.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/CommandBase.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/MotorCommandThinger.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/OI.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/Motor360On.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/Robot.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/TheOneMotor.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/Autonomous.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/LaunchSpike.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/CheckLaunchSwitch.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/RobotMap.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/PassCommand.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/LaunchSwitch.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/DetectHotGoal.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/TheCompressor.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/DriveCommand.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/LaunchCommand.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/Grabber.java</file>
-            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/AutonomousDrive.java</file>
         </group>
     </open-files>
 </project-private>

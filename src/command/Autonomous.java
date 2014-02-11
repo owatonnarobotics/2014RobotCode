@@ -26,6 +26,7 @@ public class Autonomous extends CommandGroup {
         
         addSequential(new DetectHotGoal());
         addSequential(new AutonomousDrive());
+        // Detect hot goal again?
         addSequential(new LaunchCommand());
     }
     

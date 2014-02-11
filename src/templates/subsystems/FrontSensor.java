@@ -5,7 +5,7 @@
  */
 package templates.subsystems;
 
-import edu.wpi.first.wpilibj.PWM;
+import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import templates.RobotMap;
 
@@ -15,25 +15,24 @@ import templates.RobotMap;
  */
 public class FrontSensor extends Subsystem {
 
-    private PWM frontSensor;
+    private AnalogChannel frontSensor;
+    private static final double CM_PER_INCH = 2.54;
+    private static final double MIN_FEET = (CM_PER_INCH * 12 * 4);
+    private static final double MAX_FEET = (CM_PER_INCH * 12 * 6);
+    private static final double OPTIMAL_FEET = (CM_PER_INCH * 12 * 5.2);
 
     public FrontSensor() {
         super();
-        frontSensor = new PWM(RobotMap.FRONT_SENSOR);
+        frontSensor = new AnalogChannel(RobotMap.FRONT_SENSOR);
     }
 
     public boolean inShootingRange() {
-        if (frontSensor.getRaw() > 4 && frontSensor.getRaw() < 6) {
-            return true;
-        }
-        return false;
+        int currentValue = frontSensor.getValue();
+        return (currentValue > MIN_FEET && currentValue < MAX_FEET);
     }
     
     public boolean inOptimalRange() {
-        if (frontSensor.getRaw() < 5.2) {
-            return true;
-        }
-        return false;
+        return (frontSensor.getValue() < OPTIMAL_FEET);
     }
 
     protected void initDefaultCommand() {

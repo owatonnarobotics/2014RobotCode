@@ -14,26 +14,25 @@ import templates.subsystems.Motor360;
  * @author Developer
  */
 public class LaunchCommand extends CommandBase {
-    
+
     boolean completed = false;
     boolean exitedSensor = false;
 
-    public LaunchCommand(){
+    public LaunchCommand() {
         requires(motor360);
     }
-    
+
     protected void initialize() {
+        motor360.turnOn();
     }
 
     protected void execute() {
-        motor360.turnOn();
         if (motor360.check() && exitedSensor) {
             completed = true;
-        }
-        else if (!motor360.check()) {
+        } else if (!motor360.check()) {
             exitedSensor = true;
-            }
         }
+    }
 
     protected boolean isFinished() {
         return completed;
@@ -41,8 +40,6 @@ public class LaunchCommand extends CommandBase {
 
     protected void end() {
         motor360.turnOff();
-        Timer.delay(.5);
-        System.out.println("Delay Finished");
         launcher.toggleOff();
     }
 

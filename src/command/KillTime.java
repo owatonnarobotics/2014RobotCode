@@ -3,39 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package command;
 
-import templates.RobotMap;
+package command;
 
 /**
  *
  * @author Developer
  */
-public class DetectHotGoal extends CommandBase {
-    
-    public DetectHotGoal(){
-        requires(camera);
+public class KillTime extends CommandBase {
+
+    public KillTime(double stuffedOreos) {
+        setTimeout(stuffedOreos);
     }
     
     protected void initialize() {
-    }
-
-    protected void execute() {
         
     }
 
-    protected boolean isFinished() {
-        return true;
+    protected void execute() {
+    }
 
+    protected boolean isFinished() {
+        return isTimedOut();
     }
 
     protected void end() {
-        camera.getPic();
-        camera.processPic();
-        RobotMap.hotGoal = camera.getIsHot();
+        
     }
 
     protected void interrupted() {
-
+        
     }
+    
 }

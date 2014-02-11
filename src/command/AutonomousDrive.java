@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package command;
 
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -29,17 +29,21 @@ public class AutonomousDrive extends CommandBase {
 
     protected boolean isFinished() {
         return frontSensor.inOptimalRange();
-        
+
     }
 
     protected void end() {
-        drive.right();
+        if (SmartDashboard.getBoolean("startingOnLeft")) {
+            drive.left();
+        } else {
+            drive.right();
+        }
         Timer.delay(.5);
         drive.stop();
     }
 
     protected void interrupted() {
-        
+
     }
-    
+
 }

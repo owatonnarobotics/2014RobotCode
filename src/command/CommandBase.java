@@ -14,7 +14,6 @@ import templates.subsystems.FireSolenoid;
 import templates.subsystems.FrontSensor;
 import templates.subsystems.Grabber;
 import templates.subsystems.LaunchSpike;
-import templates.subsystems.LaunchSwitch;
 import templates.subsystems.Motor360;
 
 /**
@@ -32,7 +31,6 @@ public abstract class CommandBase extends Command {
     public static Motor360 motor360 = new Motor360();
     public static TheCompressor compressor = new TheCompressor();
     public static LaunchSpike launcher = new LaunchSpike();
-    public static LaunchSwitch detector = new LaunchSwitch();
     public static CameraDetection camera = new CameraDetection();
     public static FrontSensor frontSensor = new FrontSensor();
     

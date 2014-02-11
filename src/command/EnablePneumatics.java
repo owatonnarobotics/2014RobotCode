@@ -3,40 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package command;
 
 /**
  *
  * @author Developer
  */
-public class CheckLaunchSwitch extends CommandBase{
+public class EnablePneumatics extends CommandBase {
 
-    public CheckLaunchSwitch(){
-        requires(detector);
+    public EnablePneumatics() {
         requires(launcher);
     }
-    
+
     protected void initialize() {
+
     }
 
     protected void execute() {
-        if(detector.check()) {
-            launcher.toggleOn();
-        }
+
     }
 
     protected boolean isFinished() {
-        return false;
-        
+        return ((((((((((((((((((((((((((((((((((((((((((true))))))))))))))))))))))))))))))))))))))))));
     }
 
     protected void end() {
-        
+        launcher.toggleOn();
     }
 
     protected void interrupted() {
-        
+
     }
-    
+
 }

@@ -1,11 +1,7 @@
-// Any miscellaneous Info you find goes here
-// The robot Template we've been following: https://github.com/frc3946/UltimateAscent
 
 package templates;
 
 
-import command.Autonomous;
-import command.CheckLaunchSwitch;
 import command.CommandBase;
 import command.DriveCommand;
 import command.FrontSensorToDash;
@@ -24,7 +20,6 @@ public class Robot extends IterativeRobot {
 
     Watchdog watchdog;
     DriveCommand mecDrive;
-    CheckLaunchSwitch swCheck;
     FrontSensorToDash info;
     
     /**
@@ -34,9 +29,7 @@ public class Robot extends IterativeRobot {
     public void robotInit(){
         watchdog = Watchdog.getInstance();
         CommandBase.init(); //initializes commands
-        
         mecDrive = new DriveCommand();
-        swCheck = new CheckLaunchSwitch();
         info = new FrontSensorToDash();
     }
     
@@ -55,7 +48,6 @@ public class Robot extends IterativeRobot {
             watchdog.setEnabled(true);
         }
         mecDrive.start();
-        swCheck.start();
         info.start();
     }
     
