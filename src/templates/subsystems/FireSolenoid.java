@@ -31,6 +31,6 @@ public class FireSolenoid extends Subsystem {
     }
 
     public void toggleOn() {
-        solenoid.set(Relay.Value.kOn);
+        solenoid.set(Relay.Value.kForward);
     }
 }

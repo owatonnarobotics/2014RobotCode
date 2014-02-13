@@ -2,6 +2,7 @@
 package templates;
 
 
+import command.Autonomous;
 import command.CommandBase;
 import command.DriveCommand;
 import command.FrontSensorToDash;
@@ -21,6 +22,7 @@ public class Robot extends IterativeRobot {
     Watchdog watchdog;
     DriveCommand mecDrive;
     FrontSensorToDash info;
+    Autonomous auto;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -31,9 +33,11 @@ public class Robot extends IterativeRobot {
         CommandBase.init(); //initializes commands
         mecDrive = new DriveCommand();
         info = new FrontSensorToDash();
+        auto = new Autonomous();
     }
     
     public void autonomousInit() {
+        auto.start();
     }
 
     /**

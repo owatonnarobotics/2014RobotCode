@@ -36,6 +36,9 @@ public class RobotMap {
     
     //World Varibles
     public static boolean hotGoal = false;
+    
+    //Camera IP
+    public final static String cameraIP = "10.46.24.11";
 }
 //Magikarp is better than Ditto. Nothing is better than the Guillotine. No one likes Gyarados. Dang it, Lord Michael! Foiled again!
 

@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.image.CriteriaCollection;
 import edu.wpi.first.wpilibj.image.NIVision;
 import edu.wpi.first.wpilibj.image.NIVisionException;
 import edu.wpi.first.wpilibj.image.ParticleAnalysisReport;
+import templates.RobotMap;
 
 /**
  *
@@ -24,7 +25,7 @@ public class CameraDetection extends Subsystem {
     
     
     //Camera constants used for distance calculation
-    final int Y_IMAGE_RES = 480;		//X Image resolution in pixels, should be 120, 240 or 480
+    final int Y_IMAGE_RES = 640;		//X Image resolution in pixels, should be 120, 240 or 480
     final double VIEW_ANGLE = 49;		//Axis M1013
     //final double VIEW_ANGLE = 41.7;		//Axis 206 camera
     //final double VIEW_ANGLE = 37.4;  //Axis M1011 camera
@@ -70,12 +71,14 @@ public class CameraDetection extends Subsystem {
     
     public void getPic() {
         try {
+            camera = AxisCamera.getInstance(RobotMap.cameraIP);
             image = camera.getImage();
         } catch (AxisCameraException ex) {
             ex.printStackTrace();
         } catch (NIVisionException ex) {
             ex.printStackTrace();
         }
+        System.out.println("Got 'em");
     }
     
     public void processPic() {
@@ -193,7 +196,7 @@ public class CameraDetection extends Subsystem {
     }
     
     public boolean getIsHot(){
-        return target.Hot;
+        return target.Hot; 
     }
     
      double computeDistance (BinaryImage image, ParticleAnalysisReport report, int particleNumber) throws NIVisionException {

@@ -34,9 +34,9 @@ public class AutonomousDrive extends CommandBase {
 
     protected void end() {
         if (SmartDashboard.getBoolean("startingOnLeft")) {
-            drive.left();
-        } else {
             drive.right();
+        } else {
+            drive.left();
         }
         Timer.delay(.5);
         drive.stop();

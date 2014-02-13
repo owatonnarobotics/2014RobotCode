@@ -15,21 +15,29 @@ import templates.subsystems.Motor360;
  */
 public class LaunchCommand extends CommandBase {
 
-    boolean completed = false;
-    boolean exitedSensor = false;
+    private boolean completed;
+    private boolean exitedSensor;
 
     public LaunchCommand() {
         requires(motor360);
     }
 
     protected void initialize() {
+        completed = false;
+        exitedSensor = false;
+        
+        System.out.println("Starting class.");
         motor360.turnOn();
     }
 
     protected void execute() {
+        System.out.println("Switch: " + motor360.check() );
+        System.out.println(exitedSensor );
         if (motor360.check() && exitedSensor) {
+            System.out.println("Done Rotating.");
             completed = true;
         } else if (!motor360.check()) {
+            System.out.println("No longer touching switch.");
             exitedSensor = true;
         }
     }
@@ -39,6 +47,7 @@ public class LaunchCommand extends CommandBase {
     }
 
     protected void end() {
+        System.out.println("Done shooting.");
         motor360.turnOff();
         launcher.toggleOff();
     }

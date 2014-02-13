@@ -5,6 +5,7 @@
  */
 package command;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import templates.RobotMap;
 
 /**
@@ -18,6 +19,7 @@ public class DetectHotGoal extends CommandBase {
     }
     
     protected void initialize() {
+        System.out.println("Started Auto.");
     }
 
     protected void execute() {
@@ -31,8 +33,11 @@ public class DetectHotGoal extends CommandBase {
 
     protected void end() {
         camera.getPic();
+        System.out.println("Got picture");
         camera.processPic();
+        System.out.println("Processed picture");
         RobotMap.hotGoal = camera.getIsHot();
+        SmartDashboard.putBoolean("IsHot", RobotMap.hotGoal);
     }
 
     protected void interrupted() {

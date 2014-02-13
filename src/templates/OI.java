@@ -4,8 +4,10 @@
  */
 package templates;
 
+import command.LaunchCommand;
 import command.LaunchCommandGroup;
 import command.PassCommand;
+import command.TestCommand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 

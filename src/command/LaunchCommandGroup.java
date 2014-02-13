@@ -15,7 +15,7 @@ public class LaunchCommandGroup extends CommandGroup {
 
     public LaunchCommandGroup() {
         addSequential(new LaunchCommand());
-        addSequential(new KillTime(1));
+        addSequential(new KillTime(2));
         addSequential(new EnablePneumatics());
     }
 }

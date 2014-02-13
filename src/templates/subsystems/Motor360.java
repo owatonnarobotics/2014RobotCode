@@ -27,7 +27,7 @@ public class Motor360 extends Subsystem {
     }
     
     public void turnOn() {
-        switchMotor.set(Relay.Value.kOn);
+        switchMotor.set(Relay.Value.kForward);
     }
     
     public void turnOff() {

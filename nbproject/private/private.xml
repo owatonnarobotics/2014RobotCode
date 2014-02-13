@@ -12,7 +12,20 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/Motor360.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/CameraDetection.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/KillTime.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/OI.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/FireSolenoid.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/LaunchCommandGroup.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/Robot.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/XboxController.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/TestCommand.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/LaunchSpike.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/RobotMap.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/PassCommand.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/LaunchCommand.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/Grabber.java</file>
         </group>
     </open-files>
 </project-private>
