@@ -6,6 +6,7 @@
 
 package templates.subsystems;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.camera.AxisCameraException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.image.BinaryImage;
@@ -15,7 +16,6 @@ import edu.wpi.first.wpilibj.image.NIVision;
 import edu.wpi.first.wpilibj.image.NIVisionException;
 import edu.wpi.first.wpilibj.image.ParticleAnalysisReport;
 import templates.RobotMap;
-import edu.wpi.first.wpilibj.camera.AxisCamera;
 
 /**
  *
@@ -48,7 +48,6 @@ public class CameraDetection extends Subsystem {
     
     TargetReport target;
     
-    private AxisCamera camera;
     private CriteriaCollection cc;
     ColorImage image;
     
@@ -69,11 +68,10 @@ public class CameraDetection extends Subsystem {
 		double verticalScore;
     }
     
+    
     public void getPic() {
         try {
-            camera = AxisCamera.getInstance(RobotMap.cameraIP);
-            System.out.println("Printing Camera: " + camera.getMaxFPS());
-            image = camera.getImage();
+            image = RobotMap.camera.getImage();
         } catch (AxisCameraException ex) {
             ex.printStackTrace();
         } catch (NIVisionException ex) {
@@ -90,7 +88,10 @@ public class CameraDetection extends Subsystem {
         
         try {
             BinaryImage thresholdImage = image.thresholdRGB(150, 255, 0, 150, 0, 150);
+            
             BinaryImage filteredImage = thresholdImage.particleFilter(cc);
+            
+            image.free();
             
             //iterate through each particle and score to see if it is a target
             Scores scores[] = new Scores[filteredImage.getNumberParticles()];
@@ -190,7 +191,6 @@ public class CameraDetection extends Subsystem {
                  */
                 filteredImage.free();
                 thresholdImage.free();
-                image.free();
         } catch (NIVisionException ex) {
             ex.printStackTrace();
         }

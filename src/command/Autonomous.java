@@ -7,6 +7,7 @@
 package command;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import templates.RobotMap;
 
 /**
  *
@@ -15,17 +16,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
 
     public Autonomous() {
-        //We would make commands such as
-        //addSequential(new Flamethrower());
-        //
-        //to run two at once, use
-        //addParallel(new Flamethrower()); then
-        //addSequential(new Flamethrower());
-        //
-        //That's all we need in here!
         
         addSequential(new DetectHotGoal());
         addSequential(new AutonomousDrive());
+        if(! RobotMap.hotGoal){
+            addSequential(new KillTime(4));
+        }
         // Detect hot goal again?
         addSequential(new LaunchCommand());
     }

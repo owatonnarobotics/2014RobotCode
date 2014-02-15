@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import templates.OI;
 import templates.subsystems.CameraDetection;
+import templates.subsystems.DistanceReader;
 import templates.subsystems.TheCompressor;
 import templates.subsystems.Drive;
 import templates.subsystems.FireSolenoid;
-import templates.subsystems.FrontSensor;
 import templates.subsystems.Grabber;
 import templates.subsystems.LaunchSpike;
 import templates.subsystems.Motor360;
@@ -32,7 +32,7 @@ public abstract class CommandBase extends Command {
     public static TheCompressor compressor = new TheCompressor();
     public static LaunchSpike launcher = new LaunchSpike();
     public static CameraDetection camera = new CameraDetection();
-    public static FrontSensor frontSensor = new FrontSensor();
+    public static DistanceReader distanceSensor = new DistanceReader();
     
     public static void init() {    
         oi = new OI();

@@ -4,6 +4,8 @@
  */
 package templates;
 
+import edu.wpi.first.wpilibj.camera.AxisCamera;
+
 /**
  *
  * @author Developer
@@ -28,17 +30,26 @@ public class RobotMap {
     public static final int DIGITAL_SENSOR = 6;             // Detects whether 360 motor went a full 360
     public static final int COMPRESSOR_GAUGE = 5;           // Another port for the compressor
     public static final int FRONT_SENSOR = 4;               // Detects distance in front of robot
-                                                            // Technic Launcher, Dingbat!
+    //Ultrasonic Sensor
+    public static final int PING_CHANNEL = 1;
+    public static final int ECHO_CHANNEL = 2;
     
     //Buttons
     public static final int PASS = XboxController.ButtonType.kLTrigger.value;   // If you can't figure this one out...
     public static final int LAUNCH = XboxController.ButtonType.kRTrigger.value;
+    
+    //Shot range
+    public static final double minRange = 7 * 12;
+    public static final double maxRange = 16 * 12;
     
     //World Varibles
     public static boolean hotGoal = false;
     
     //Camera IP
     public final static String cameraIP = "10.46.24.11";
+    
+    //Camera
+    public static AxisCamera camera;
 }
 //Magikarp is better than Ditto. Nothing is better than the Guillotine. No one likes Gyarados. Dang it, Lord Michael! Foiled again!
 

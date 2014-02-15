@@ -16,7 +16,7 @@ import templates.subsystems.FrontSensor;
 public class FrontSensorToDash extends CommandBase {
 
     public FrontSensorToDash() {
-        requires(frontSensor);
+        requires(distanceSensor);
     }
     
     
@@ -25,7 +25,7 @@ public class FrontSensorToDash extends CommandBase {
     }
 
     protected void execute() {
-        SmartDashboard.putBoolean("Distance: ", frontSensor.inShootingRange());
+        SmartDashboard.putBoolean("Distance: ", distanceSensor.inRange());
     }
 
     protected boolean isFinished() {

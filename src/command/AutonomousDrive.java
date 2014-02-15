@@ -5,9 +5,6 @@
  */
 package command;
 
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 /**
  *
  * @author Developer
@@ -15,8 +12,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class AutonomousDrive extends CommandBase {
 
     public AutonomousDrive() {
+        this.setTimeout(4);
         requires(drive);
-        requires(frontSensor);
+        requires(distanceSensor);
     }
 
     protected void initialize() {
@@ -28,17 +26,11 @@ public class AutonomousDrive extends CommandBase {
     }
 
     protected boolean isFinished() {
-        return frontSensor.inOptimalRange();
+        return distanceSensor.inRange() || this.isTimedOut();
 
     }
 
     protected void end() {
-        if (SmartDashboard.getBoolean("startingOnLeft")) {
-            drive.right();
-        } else {
-            drive.left();
-        }
-        Timer.delay(.5);
         drive.stop();
     }
 
