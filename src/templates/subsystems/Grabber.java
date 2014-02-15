@@ -29,6 +29,6 @@ public class Grabber extends Subsystem {
     public Grabber() {
         super();
         jGrab = new Jaguar(RobotMap.SPINNING_BALL_GRABBER_PORT);
-        jGrab.set(-.5);
+        jGrab.set(1);
     }
 }

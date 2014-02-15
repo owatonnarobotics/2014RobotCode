@@ -19,7 +19,7 @@ public class PassCommand extends CommandBase {
     }
 
     protected void initialize() {
-        setTimeout(.5);
+        setTimeout(3);
         grab.switchSpin();
         solenoid.toggleOn();
     }

@@ -6,7 +6,6 @@
 
 package templates.subsystems;
 
-import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.camera.AxisCameraException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.image.BinaryImage;
@@ -16,6 +15,7 @@ import edu.wpi.first.wpilibj.image.NIVision;
 import edu.wpi.first.wpilibj.image.NIVisionException;
 import edu.wpi.first.wpilibj.image.ParticleAnalysisReport;
 import templates.RobotMap;
+import edu.wpi.first.wpilibj.camera.AxisCamera;
 
 /**
  *
@@ -72,6 +72,7 @@ public class CameraDetection extends Subsystem {
     public void getPic() {
         try {
             camera = AxisCamera.getInstance(RobotMap.cameraIP);
+            System.out.println("Printing Camera: " + camera.getMaxFPS());
             image = camera.getImage();
         } catch (AxisCameraException ex) {
             ex.printStackTrace();
