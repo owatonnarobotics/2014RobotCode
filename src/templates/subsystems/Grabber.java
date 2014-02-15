@@ -26,6 +26,15 @@ public class Grabber extends Subsystem {
         
     }
     
+    public void toggleOn(){
+        if(jGrab.get() != 0){
+            jGrab.set(0);
+        }
+        else{
+            jGrab.set(1);
+        }
+    }
+    
     public Grabber() {
         super();
         jGrab = new Jaguar(RobotMap.SPINNING_BALL_GRABBER_PORT);

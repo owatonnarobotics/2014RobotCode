@@ -31,12 +31,13 @@ public class RobotMap {
     public static final int COMPRESSOR_GAUGE = 5;           // Another port for the compressor
     public static final int FRONT_SENSOR = 4;               // Detects distance in front of robot
     //Ultrasonic Sensor
-    public static final int PING_CHANNEL = 1;
-    public static final int ECHO_CHANNEL = 2;
+    public static final int PING_CHANNEL = 1;               // The ping channel for the ultrasonic rangefinder
+    public static final int ECHO_CHANNEL = 2;               // The echo channel for the ultrasonic rangefinder
     
     //Buttons
     public static final int PASS = XboxController.ButtonType.kLTrigger.value;   // If you can't figure this one out...
     public static final int LAUNCH = XboxController.ButtonType.kRTrigger.value;
+    public static final int PASS_TOGGLE = XboxController.ButtonType.kA.value;   // The button that switches the grabber on and off
     
     //Shot range
     public static final double minRange = 7 * 12;
@@ -51,8 +52,3 @@ public class RobotMap {
     //Camera
     public static AxisCamera camera;
 }
-//Magikarp is better than Ditto. Nothing is better than the Guillotine. No one likes Gyarados. Dang it, Lord Michael! Foiled again!
-
-//Something with the launch switch is broken...
-//Compressor going too high. Not our fault I think.
-//Watchdog not fed again during rTrigger

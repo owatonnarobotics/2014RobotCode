@@ -6,36 +6,30 @@
 
 package command;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 /**
  *
  * @author Developer
  */
-public class FrontSensorToDash extends CommandBase {
+public class ToggleGrabber extends CommandBase{
 
-    public FrontSensorToDash() {
-        requires(distanceSensor);
-    }
-    
     protected void initialize() {
-        
+        requires(grab);
     }
 
     protected void execute() {
-        SmartDashboard.putBoolean("distance", distanceSensor.inRange());
+
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {
-        
+        grab.toggleOn();
     }
 
     protected void interrupted() {
-        
+
     }
     
 }
