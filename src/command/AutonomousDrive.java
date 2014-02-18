@@ -12,7 +12,7 @@ package command;
 public class AutonomousDrive extends CommandBase {
 
     public AutonomousDrive() {
-        this.setTimeout(4);
+        this.setTimeout(3);
         requires(drive);
         requires(distanceSensor);
     }
@@ -27,7 +27,6 @@ public class AutonomousDrive extends CommandBase {
 
     protected boolean isFinished() {
         return distanceSensor.inRange() || this.isTimedOut();
-
     }
 
     protected void end() {

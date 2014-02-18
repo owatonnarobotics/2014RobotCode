@@ -37,7 +37,7 @@ public class RobotMap {
     //Buttons
     public static final int PASS = XboxController.ButtonType.kLTrigger.value;   // If you can't figure this one out...
     public static final int LAUNCH = XboxController.ButtonType.kRTrigger.value;
-    public static final int PASS_TOGGLE = XboxController.ButtonType.kA.value;   // The button that switches the grabber on and off
+    public static final int PASS_TOGGLE = XboxController.ButtonType.kR.value;   // The button that switches the grabber on and off
     
     //Shot range
     public static final double minRange = 7 * 12;

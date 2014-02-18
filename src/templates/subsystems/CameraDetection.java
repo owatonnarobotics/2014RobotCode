@@ -46,10 +46,19 @@ public class CameraDetection extends Subsystem {
     //Maximum number of particles to process
     final int MAX_PARTICLES = 8;
     
+    final int RED_MIN   = 55;
+    final int RED_MAX   = 125;
+    final int GREEN_MIN = 125;
+    final int GREEN_MAX = 175;
+    final int BLUE_MIN  = 155;
+    final int BLUE_MAX  = 200; 
+    
     TargetReport target;
     
     private CriteriaCollection cc;
     ColorImage image;
+    
+    private double distance;
     
     public class Scores {
         double rectangularity;
@@ -87,10 +96,12 @@ public class CameraDetection extends Subsystem {
 	int verticalTargetCount, horizontalTargetCount;
         
         try {
-            BinaryImage thresholdImage = image.thresholdRGB(150, 255, 0, 150, 0, 150);
+            BinaryImage thresholdImage = image.thresholdRGB(RED_MIN, RED_MAX, GREEN_MIN, GREEN_MAX, BLUE_MIN, BLUE_MAX);
+            
+            cc = new CriteriaCollection();      // create the criteria for the particle filter
+            cc.addCriteria(NIVision.MeasurementType.IMAQ_MT_AREA, AREA_MINIMUM, 65535, false);
             
             BinaryImage filteredImage = thresholdImage.particleFilter(cc);
-            
             image.free();
             
             //iterate through each particle and score to see if it is a target
@@ -172,9 +183,10 @@ public class CameraDetection extends Subsystem {
                                     //To get measurement information such as sizes or locations use the
                                     //horizontal or vertical index to get the particle report as shown below
                                     ParticleAnalysisReport distanceReport = filteredImage.getParticleAnalysisReport(target.verticalIndex);
-                                    double distance = computeDistance(filteredImage, distanceReport, target.verticalIndex);
+                                    distance = computeDistance(filteredImage, distanceReport, target.verticalIndex);
                                     if(target.Hot)
                                     {
+                                            RobotMap.hotGoal = true;
                                             System.out.println("Hot target located");
                                             System.out.println("Distance: " + distance);
                                     } else {
@@ -198,6 +210,10 @@ public class CameraDetection extends Subsystem {
     
     public boolean getIsHot(){
         return target.Hot; 
+    }
+    
+    public double getDistance(){
+        return distance;
     }
     
      double computeDistance (BinaryImage image, ParticleAnalysisReport report, int particleNumber) throws NIVisionException {

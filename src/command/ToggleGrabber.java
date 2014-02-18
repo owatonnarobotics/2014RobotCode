@@ -12,8 +12,11 @@ package command;
  */
 public class ToggleGrabber extends CommandBase{
 
-    protected void initialize() {
+    public ToggleGrabber(){
         requires(grab);
+    }
+    
+    protected void initialize() {
     }
 
     protected void execute() {

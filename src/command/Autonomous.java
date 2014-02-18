@@ -18,12 +18,12 @@ public class Autonomous extends CommandGroup {
     public Autonomous() {
         
         addSequential(new DetectHotGoal());
-        addSequential(new AutonomousDrive());
+        //addSequential(new AutonomousDrive());
         if(! RobotMap.hotGoal){
-            addSequential(new KillTime(4));
+            //addSequential(new KillTime(4));
         }
         // Detect hot goal again?
-        addSequential(new LaunchCommand());
+        //addSequential(new LaunchCommand());
     }
     
 }

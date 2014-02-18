@@ -22,22 +22,26 @@ public class Grabber extends Subsystem {
     
     //this switches the direction of the grabber
     public void switchSpin() {
-        jGrab.set(jGrab.get() * -1);
-        
+        if(jGrab.get() == 0.0){
+            jGrab.set(-1.0);
+        }
+        else{
+            jGrab.set(jGrab.get() * -1.0);
+        }
     }
     
     public void toggleOn(){
-        if(jGrab.get() != 0){
-            jGrab.set(0);
+        if(jGrab.get() != 0.0){
+            jGrab.set(0.0);
         }
         else{
-            jGrab.set(1);
+            jGrab.set(1.0);
         }
     }
     
     public Grabber() {
         super();
         jGrab = new Jaguar(RobotMap.SPINNING_BALL_GRABBER_PORT);
-        jGrab.set(1);
+        jGrab.set(0.0);
     }
 }

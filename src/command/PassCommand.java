@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.Timer;
  * @author Developer
  */
 public class PassCommand extends CommandBase {
-
+    
     public PassCommand() {
         requires(grab);
         requires(solenoid);
@@ -29,7 +29,6 @@ public class PassCommand extends CommandBase {
 
     protected boolean isFinished() {
         return isTimedOut();
-
     }
 
     protected void end() {
@@ -38,7 +37,7 @@ public class PassCommand extends CommandBase {
     }
 
     protected void interrupted() {
-
+        solenoid.toggleOff();
     }
 
 }
