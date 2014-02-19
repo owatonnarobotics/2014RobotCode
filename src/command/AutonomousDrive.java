@@ -12,29 +12,33 @@ package command;
 public class AutonomousDrive extends CommandBase {
 
     public AutonomousDrive() {
-        this.setTimeout(3);
         requires(drive);
-        requires(distanceSensor);
+        //requires(distanceSensor);
     }
 
     protected void initialize() {
-        drive.forward();
+        this.setTimeout(2.5);
+        System.out.println("Started Drive.");
     }
 
     protected void execute() {
-
+        drive.forward();
+        System.out.println("Executing Drive");
     }
 
     protected boolean isFinished() {
-        return distanceSensor.inRange() || this.isTimedOut();
+        //return distanceSensor.inRange() || this.isTimedOut();
+        return this.isTimedOut();
     }
 
     protected void end() {
         drive.stop();
+        System.out.println("Done with Drive");
     }
 
     protected void interrupted() {
-
+        System.out.println("Interrupted.");
+        drive.stop();
     }
 
 }

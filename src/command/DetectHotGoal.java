@@ -20,7 +20,6 @@ public class DetectHotGoal extends CommandBase {
     
     protected void initialize() {
         RobotMap.hotGoal = false;
-        System.out.println("Started Auto.");
     }
 
     protected void execute() {
@@ -34,9 +33,7 @@ public class DetectHotGoal extends CommandBase {
 
     protected void end() {
         camera.getPic();
-        System.out.println("Got picture");
         camera.processPic();
-        System.out.println("Processed picture");
         if(RobotMap.hotGoal){
             System.out.println("HOT GOAL!!!!!!!");
             System.out.println("Distance: " + camera.getDistance());

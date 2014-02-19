@@ -5,7 +5,7 @@
             <url>src/command/DetectHotGoal.java</url>
             <bookmark id="1">
                 <name/>
-                <line>48</line>
+                <line>45</line>
                 <key/>
             </bookmark>
         </file>
@@ -16,6 +16,13 @@
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/PassCommand.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/DetectHotGoal.java</file>
             <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/CameraDetection.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/subsystems/Drive.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/DriveCommand.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/AutoKillTime.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/LaunchCommandGroup.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/templates/Robot.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/LaunchCommand.java</file>
+            <file>file:/C:/Users/Developer/Documents/NetBeansProjects/MecanumDrive/src/command/AutonomousDrive.java</file>
         </group>
     </open-files>
 </project-private>

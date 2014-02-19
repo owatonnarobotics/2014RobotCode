@@ -19,6 +19,7 @@ public class LaunchCommand extends CommandBase {
     private boolean exitedSensor;
 
     public LaunchCommand() {
+        System.out.println("Started LaunchCommand.");
         requires(motor360);
     }
 

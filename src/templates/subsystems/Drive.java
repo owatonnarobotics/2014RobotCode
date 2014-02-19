@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -27,7 +28,9 @@ public class Drive extends Subsystem {
     private Jaguar jBR;   
     private RobotDrive drive;
     
-    private final double autoSpeed = 0.8;
+    private double speed;
+    
+    private final double autoSpeed = 0.32;
 
     public Drive() {
         super();
@@ -40,7 +43,7 @@ public class Drive extends Subsystem {
     
     protected void initDefaultCommand() {
     }
-    
+      
     public void execute(XboxController controller) {
         double xleft = controller.getX(GenericHID.Hand.kLeft);
         double yleft = controller.getY(GenericHID.Hand.kLeft);
@@ -53,7 +56,11 @@ public class Drive extends Subsystem {
     }
     
     public void forward(){
-        drive.mecanumDrive_Cartesian(0, autoSpeed, 0, 0);
+//        double speed = jFL.get();
+//        if(speed > autoSpeed * -1){
+//            speed -= 0.01;
+//        }
+        drive.mecanumDrive_Cartesian(0, autoSpeed * -1, 0, 0);
     }
     
     public void left(){
