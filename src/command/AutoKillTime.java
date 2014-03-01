@@ -17,7 +17,7 @@ public class AutoKillTime extends CommandBase {
     }
 
     protected void initialize() {
-        setTimeout(4);
+        setTimeout(3);
         System.out.println("Started AutoKillTime.");
     }
 
@@ -29,6 +29,7 @@ public class AutoKillTime extends CommandBase {
     }
 
     protected void end() {
+        System.out.println("Ended AutoKillTime.");
     }
 
     protected void interrupted() {

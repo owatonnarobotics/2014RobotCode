@@ -46,12 +46,12 @@ public class CameraDetection extends Subsystem {
     //Maximum number of particles to process
     final int MAX_PARTICLES = 8;
     
-    final int RED_MIN   = 55;
-    final int RED_MAX   = 125;
+    final int RED_MIN   = 80;
+    final int RED_MAX   = 150;
     final int GREEN_MIN = 125;
     final int GREEN_MAX = 175;
-    final int BLUE_MIN  = 155;
-    final int BLUE_MAX  = 200; 
+    final int BLUE_MIN  = 135;
+    final int BLUE_MAX  = 190; 
     
     TargetReport target;
     

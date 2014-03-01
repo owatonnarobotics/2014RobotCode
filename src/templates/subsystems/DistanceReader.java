@@ -16,18 +16,33 @@ import templates.RobotMap;
  */
 public class DistanceReader extends Subsystem{
     private Ultrasonic sensor;
+    private int trueAutoCount = 0; // The number of times the range was correct
     
     protected void initDefaultCommand() {
         
     }
     
     public double getDistance(){
-        return sensor.getRangeInches();
+        double distance = sensor.getRangeInches();
+        System.out.println(distance);
+        return distance;
     }
     
     public boolean inRange(){
-        double distance = sensor.getRangeInches();
+        double distance = this.getDistance();
         return RobotMap.minRange < distance && distance < RobotMap.maxRange;
+    }
+    
+    public boolean inAutoRange(){
+        double distance = this.getDistance();
+        boolean inRange = RobotMap.minAutoRange < distance && distance < RobotMap.maxAutoRange;
+        if(inRange){
+            trueAutoCount += 1;
+        }
+        else{
+            trueAutoCount = 0;
+        }
+        return trueAutoCount > 5;
     }
     
     public DistanceReader(){

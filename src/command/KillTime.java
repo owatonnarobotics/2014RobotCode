@@ -11,13 +11,14 @@ package command;
  * @author Developer
  */
 public class KillTime extends CommandBase {
-
+    double timeOut;
+    
     public KillTime(double stuffedOreos) {
-        setTimeout(stuffedOreos);
+        timeOut = stuffedOreos;
     }
     
     protected void initialize() {
-        
+        setTimeout(timeOut);
     }
 
     protected void execute() {

@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import templates.OI;
 import templates.RobotMap;
 import templates.XboxController;
@@ -50,9 +49,6 @@ public class Drive extends Subsystem {
         double xright = controller.getX(GenericHID.Hand.kRight);
         
         drive.mecanumDrive_Cartesian(joystickSensitivity(xleft), joystickSensitivity(yleft), joystickSensitivity(xright),0);
-        SmartDashboard.putNumber("Left  X Speed: ", joystickSensitivity(xleft)); //LaFt X SPeEd: 
-        SmartDashboard.putNumber("Left  Y Speed: ", joystickSensitivity(yleft)); //LEFT Y spade: 
-        SmartDashboard.putNumber("Right X Speed: ", joystickSensitivity(xright)); //Right XD speeeeed: 
     }
     
     public void forward(){
