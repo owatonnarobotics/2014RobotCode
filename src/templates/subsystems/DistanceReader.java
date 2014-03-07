@@ -24,7 +24,6 @@ public class DistanceReader extends Subsystem{
     
     public double getDistance(){
         double distance = sensor.getRangeInches();
-        System.out.println(distance);
         return distance;
     }
     
@@ -41,6 +40,9 @@ public class DistanceReader extends Subsystem{
         }
         else{
             trueAutoCount = 0;
+        }
+        if(trueAutoCount > 5){
+            System.out.println("Stopped because of AutoRange.");
         }
         return trueAutoCount > 5;
     }

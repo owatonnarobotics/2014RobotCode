@@ -24,11 +24,12 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
         watchdog = Watchdog.getInstance();
+        watchdog.setEnabled(false);
         CommandBase.init(); //initializes commands
         mecDrive = new DriveCommand();
         info = new FrontSensorToDash();
         auto = new Autonomous();
-        RobotMap.camera = AxisCamera.getInstance();
+        //RobotMap.camera = AxisCamera.getInstance();
     }
 
     public void autonomousInit() {

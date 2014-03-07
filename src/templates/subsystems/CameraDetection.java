@@ -7,6 +7,7 @@
 package templates.subsystems;
 
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.camera.AxisCameraException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.image.BinaryImage;
@@ -23,7 +24,7 @@ import templates.RobotMap;
  */
 public class CameraDetection extends Subsystem {
     
-    
+    AxisCamera camera;
     //Camera constants used for distance calculation
     final int Y_IMAGE_RES = 640;		//X Image resolution in pixels, should be 120, 240 or 480
     final double VIEW_ANGLE = 49;		//Axis M1013
@@ -47,11 +48,11 @@ public class CameraDetection extends Subsystem {
     final int MAX_PARTICLES = 8;
     
     final int RED_MIN   = 80;
-    final int RED_MAX   = 150;
-    final int GREEN_MIN = 125;
-    final int GREEN_MAX = 175;
+    final int RED_MAX   = 170;
+    final int GREEN_MIN = 115;
+    final int GREEN_MAX = 155;
     final int BLUE_MIN  = 135;
-    final int BLUE_MAX  = 190; 
+    final int BLUE_MAX  = 180; 
     
     TargetReport target;
     
@@ -78,15 +79,16 @@ public class CameraDetection extends Subsystem {
     }
     
     
-    public void getPic() {
+    public boolean getPic() {
         try {
-            image = RobotMap.camera.getImage();
-        } catch (AxisCameraException ex) {
-            ex.printStackTrace();
-        } catch (NIVisionException ex) {
+            
+            image = camera.getImage();
+            System.out.println("Got 'em");
+            return true;
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
-        System.out.println("Got 'em");
+        return false;
     }
     
     public void processPic() {
@@ -203,7 +205,7 @@ public class CameraDetection extends Subsystem {
                  */
                 filteredImage.free();
                 thresholdImage.free();
-        } catch (NIVisionException ex) {
+        } catch (Exception ex){
             ex.printStackTrace();
         }
     }
@@ -310,7 +312,9 @@ public class CameraDetection extends Subsystem {
 		return isHot;
 	}
     
-    public void CameraDetection(){
+    public CameraDetection(){
+    //    camera = AxisCamera.getInstance();
+        System.out.println("Started Camera.");
         cc = new CriteriaCollection();      // create the criteria for the particle filter
         cc.addCriteria(NIVision.MeasurementType.IMAQ_MT_AREA, AREA_MINIMUM, 65535, false);
     }

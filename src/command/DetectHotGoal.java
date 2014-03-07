@@ -32,8 +32,10 @@ public class DetectHotGoal extends CommandBase {
     }
 
     protected void end() {
-        camera.getPic();
-        camera.processPic();
+        boolean cameraWorking = camera.getPic();
+        if(cameraWorking){
+            camera.processPic();
+        }
         if(RobotMap.hotGoal){
             System.out.println("HOT GOAL!!!!!!!");
             System.out.println("Distance: " + camera.getDistance());

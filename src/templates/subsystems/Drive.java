@@ -29,7 +29,7 @@ public class Drive extends Subsystem {
     
     private double speed;
     
-    private final double autoSpeed = 0.32;
+    private final double autoSpeed = 0.31;
 
     public Drive() {
         super();

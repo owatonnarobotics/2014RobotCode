@@ -23,7 +23,7 @@ public class RobotMap {
     //Relays
     public static final int SOLENOID_PASSING_PORT = 8;      // The that launches the ball to pass
     public static final int MOTOR_360 = 6;                  // {Shooter Window Motor} Spins the motor that launches the ball (Window Motor)
-    public static final int COMPRESSOR_PORT = 4;            // Turns on (and off) compressor
+    public static final int COMPRESSOR_PORT = 5;            // Turns on (and off) compressor
     public static final int LAUNCH_SOLENOID = 1;            // {Pnuematic Solenoid} Turns on the pneumatics to fill the arms to fling the arms up
     
     //Digital IO
@@ -40,11 +40,11 @@ public class RobotMap {
     
     //Shot Range
     public static final double minRange = 7 * 12;
-    public static final double maxRange = 15.5 * 12;
+    public static final double maxRange = 14 * 12;
     
         //Autonomous Shot Range
-    public static final double minAutoRange = 7 * 12;
-    public static final double maxAutoRange = 13 * 12;
+    public static final double minAutoRange = 3 * 12;
+    public static final double maxAutoRange = 8 * 12;
     
     //World Varibles
     public static boolean hotGoal = false;
@@ -53,5 +53,5 @@ public class RobotMap {
     public final static String cameraIP = "10.46.24.11";
     
     //Camera
-    public static AxisCamera camera;
+    //public static AxisCamera camera;
 }
