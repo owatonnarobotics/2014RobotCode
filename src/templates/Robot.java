@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public class Robot extends IterativeRobot {
 
     Watchdog watchdog;
-    DriveCommand mecDrive;
+    DriveCommand tankDrive;
     FrontSensorToDash info;
     Autonomous auto;
 
@@ -26,7 +26,7 @@ public class Robot extends IterativeRobot {
         watchdog = Watchdog.getInstance();
         watchdog.setEnabled(false);
         CommandBase.init(); //initializes commands
-        mecDrive = new DriveCommand();
+        tankDrive = new DriveCommand();
         info = new FrontSensorToDash();
         auto = new Autonomous();
         //RobotMap.camera = AxisCamera.getInstance();
@@ -47,7 +47,7 @@ public class Robot extends IterativeRobot {
         if (!watchdog.getEnabled()) {
             watchdog.setEnabled(true);
         }
-        mecDrive.start();
+        tankDrive.start();
         info.start();
     }
 

@@ -33,10 +33,10 @@ public class Drive extends Subsystem {
 
     public Drive() {
         super();
-        jFL = new Jaguar(RobotMap.MECANUM_FRONT_LEFT);
-        jBL = new Jaguar(RobotMap.MECANUM_BACK_LEFT);
-        jFR = new Jaguar(RobotMap.MECANUM_FRONT_RIGHT);
-        jBR = new Jaguar(RobotMap.MECANUM_BACK_RIGHT);
+        jFL = new Jaguar(RobotMap.TANK_FRONT_LEFT);
+        jBL = new Jaguar(RobotMap.TANK_BACK_LEFT);
+        jFR = new Jaguar(RobotMap.TANK_FRONT_RIGHT);
+        jBR = new Jaguar(RobotMap.TANK_BACK_RIGHT);
         drive = new RobotDrive(jFL, jBL, jFR, jBR);
     }
     
@@ -44,11 +44,12 @@ public class Drive extends Subsystem {
     }
       
     public void execute(XboxController controller) {
-        double xleft = controller.getX(GenericHID.Hand.kLeft);
+        //double xleft = controller.getX(GenericHID.Hand.kLeft);
         double yleft = controller.getY(GenericHID.Hand.kLeft);
-        double xright = controller.getX(GenericHID.Hand.kRight);
+        //double xright = controller.getX(GenericHID.Hand.kRight);
+        double yright = controller.getY(GenericHID.Hand.kRight);
         
-        drive.mecanumDrive_Cartesian(joystickSensitivity(xleft), joystickSensitivity(yleft), joystickSensitivity(xright),0);
+        drive.tankDrive(joystickSensitivity(yleft), joystickSensitivity(yright));
     }
     
     public void forward(){
@@ -56,19 +57,19 @@ public class Drive extends Subsystem {
 //        if(speed > autoSpeed * -1){
 //            speed -= 0.01;
 //        }
-        drive.mecanumDrive_Cartesian(0, autoSpeed * -1, 0, 0);
+        drive.tankDrive(autoSpeed, autoSpeed);
     }
     
     public void left(){
-        drive.mecanumDrive_Cartesian(-1 * autoSpeed, 0, 0, 0);
+        drive.tankDrive(0, autoSpeed);
     }
     
     public void right(){
-        drive.mecanumDrive_Cartesian(autoSpeed, 0, 0, 0);
+        drive.tankDrive(autoSpeed, 0);
     }
     
     public void stop(){
-        drive.mecanumDrive_Cartesian(0, 0, 0, 0);
+        drive.tankDrive(0, 0);
     }
 
     private static double joystickSensitivity(double num){ // joySense Ooh La La

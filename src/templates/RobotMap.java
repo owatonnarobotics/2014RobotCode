@@ -13,10 +13,10 @@ import edu.wpi.first.wpilibj.camera.AxisCamera;
 public class RobotMap {
 
     //Jaguars [PWMs]
-    public static final int MECANUM_BACK_LEFT = 1;
-    public static final int MECANUM_BACK_RIGHT = 2;
-    public static final int MECANUM_FRONT_LEFT = 3;
-    public static final int MECANUM_FRONT_RIGHT = 4;
+    public static final int TANK_BACK_LEFT = 1;
+    public static final int TANK_BACK_RIGHT = 2;
+    public static final int TANK_FRONT_LEFT = 3;
+    public static final int TANK_FRONT_RIGHT = 4;
     
     public static final int SPINNING_BALL_GRABBER_PORT = 7; // {Ball Acquisition Motor} *Is Jaguar #5
     
