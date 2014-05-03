@@ -24,14 +24,14 @@ public class LaunchSpike extends Subsystem {
     public LaunchSpike() {
         super();
         launcher = new Relay(RobotMap.LAUNCH_SOLENOID);
-        launcher.set(Relay.Value.kForward);
+        launcher.set(Relay.Value.kOff);
     }
     
     public void toggleOn() {
-        launcher.set(Relay.Value.kForward);
+        launcher.set(Relay.Value.kOff);
     }
     
     public void toggleOff() {
-        launcher.set(Relay.Value.kOff);
+        launcher.set(Relay.Value.kForward);
     }
 }

@@ -6,6 +6,8 @@
 package command;
 
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import templates.subsystems.Grabber;
 
 /**
  *
@@ -22,6 +24,7 @@ public class PassCommand extends CommandBase {
         setTimeout(3);
         grab.switchSpin();
         solenoid.toggleOn();
+        SmartDashboard.putBoolean("Pull On", Grabber.motorOn);
     }
 
     protected void execute() {

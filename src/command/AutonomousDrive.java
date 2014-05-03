@@ -13,11 +13,11 @@ public class AutonomousDrive extends CommandBase {
 
     public AutonomousDrive() {
         requires(drive);
-        requires(distanceSensor);
+        //requires(distanceSensor);
     }
 
     protected void initialize() {
-        this.setTimeout(4);
+        this.setTimeout(3.7);
         System.out.println("Executing Drive");
     }
 
@@ -26,8 +26,8 @@ public class AutonomousDrive extends CommandBase {
     }
 
     protected boolean isFinished() {
-        return this.isTimedOut() || distanceSensor.inAutoRange();
-        //return distanceSensor.inAutoRange();
+        return this.isTimedOut();
+        //return distanceSensor.inAutoRange() || distanceSensor.inAutoRange();
     }
 
     protected void end() {

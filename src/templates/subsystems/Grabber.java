@@ -15,6 +15,10 @@ import templates.RobotMap;
  * @author Rebel Scum
  */
 public class Grabber extends Subsystem {
+    
+    
+    public static boolean motorOn = false;
+    
     private Jaguar jGrab;
 
     protected void initDefaultCommand() {
@@ -24,18 +28,22 @@ public class Grabber extends Subsystem {
     public void switchSpin() {
         if(jGrab.get() == 0.0){
             jGrab.set(-1.0);
+            motorOn = true;
         }
         else{
             jGrab.set(jGrab.get() * -1.0);
+            motorOn = true;
         }
     }
     
     public void toggleOn(){
         if(jGrab.get() != 0.0){
             jGrab.set(0.0);
+            motorOn = false;
         }
         else{
             jGrab.set(1.0);
+            motorOn = true;
         }
     }
     

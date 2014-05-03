@@ -6,12 +6,16 @@
 
 package command;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import templates.subsystems.Grabber;
+import templates.subsystems.LaunchSpike;
+
 /**
  *
  * @author Developer
  */
 public class ToggleGrabber extends CommandBase{
-
+    
     public ToggleGrabber(){
         requires(grab);
     }
@@ -29,6 +33,7 @@ public class ToggleGrabber extends CommandBase{
 
     protected void end() {
         grab.toggleOn();
+        SmartDashboard.putBoolean("Pull On", Grabber.motorOn);
     }
 
     protected void interrupted() {

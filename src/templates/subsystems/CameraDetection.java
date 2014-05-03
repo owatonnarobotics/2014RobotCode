@@ -313,7 +313,7 @@ public class CameraDetection extends Subsystem {
 	}
     
     public CameraDetection(){
-    //    camera = AxisCamera.getInstance();
+        //camera = AxisCamera.getInstance();
         System.out.println("Started Camera.");
         cc = new CriteriaCollection();      // create the criteria for the particle filter
         cc.addCriteria(NIVision.MeasurementType.IMAQ_MT_AREA, AREA_MINIMUM, 65535, false);

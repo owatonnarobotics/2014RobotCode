@@ -39,8 +39,8 @@ public class RobotMap {
     public static final int PASS_TOGGLE = XboxController.ButtonType.kR.value;   // The button that switches the grabber on and off
     
     //Shot Range
-    public static final double minRange = 7 * 12;
-    public static final double maxRange = 14 * 12;
+    public static final double minRange = 6 * 12;
+    public static final double maxRange = 10 * 12;
     
         //Autonomous Shot Range
     public static final double minAutoRange = 3 * 12;
