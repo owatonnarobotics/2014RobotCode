@@ -24,7 +24,7 @@ public class EnablePneumatics extends CommandBase {
     }
 
     protected boolean isFinished() {
-        return ((((((((((((((((((((((((((((((((((((((((((true))))))))))))))))))))))))))))))))))))))))));
+        return (true);
     }
 
     protected void end() {
